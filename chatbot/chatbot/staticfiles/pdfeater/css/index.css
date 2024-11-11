@@ -1,0 +1,282 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+@media (max-width: 768px) {
+    #sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        width: 80% !important;
+        height: 100vh;
+        margin-left: -100%;
+        transition: left 0.3s ease-in-out;
+    }
+
+    #sidebar.show {
+        margin-left: 0;
+    }
+
+    .sidebar-toggle {
+        z-index: 1001;
+    }
+} 
+.side--bar {
+    background-color: #2d2d2d;
+    padding: 1rem;
+    border-right: 1px solid #3e3e3e;
+    /* Add these properties */
+    height: 100vh;
+    overflow-y: auto;
+    position: fixed;
+    width: 250px; /* Set a fixed width for larger screens */
+}
+.upload-box {
+    background-color: #f8f9fa;
+    cursor: pointer;
+}
+.file-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.file-name {
+    font-weight: 500;
+}
+.file-actions i {
+    cursor: pointer;
+    margin: 0 5px;
+}
+  
+
+.process--pdf {
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.process--pdf:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+.dropdown-item:hover {
+    background-color: #444444; /* Choose a color for the hover background */
+    color: #ffffff; /* Text color on hover */
+}
+
+.main--body {
+    position: relative;
+    background-color: #34413f;
+    width: 100%;
+    z-index: 500; /* Lower the z-index if you want it behind the input */
+}
+
+.answer--body {
+    overflow-y: scroll;
+    height: calc(100vh - 38px); 
+    padding-bottom: 20px;
+}
+
+
+.input--area {
+    position: fixed;
+    bottom: 0;
+    width: 80%;
+    z-index: 1000;
+    background-color: black;
+}
+
+.input--area .input-group-text img {
+    width: 20px;
+    height: 20px;
+}
+
+.message--div{
+    display: flex;
+    justify-content:right;
+    margin-right:auto;
+}
+.message {
+    position: relative;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 10px;
+    max-width: 70%;
+
+}
+
+.user--message {
+    background-color: #1c221f;
+    align-self: flex-end;
+    text-align: right;
+    color: white;
+    z-index: 100; /* Use a more reasonable value */
+}
+
+.user--model{
+    background-color: #343637;
+    align-self: flex-start;
+    color:white;
+}
+
+.icon{
+    width:1rem;
+    height: 1rem;
+}
+
+
+/* Markdown Content Styling */
+.markdown-content {
+    padding: 1rem;
+    line-height: 1.6;
+    color: #f8f9fa;
+}
+
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3,
+.markdown-content h4,
+.markdown-content h5,
+.markdown-content h6 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+.markdown-content p {
+    margin-bottom: 1rem;
+}
+
+/* Code block styling */
+.markdown-content pre {
+    background-color: #0d1117;  /* Much darker background, similar to GitHub dark */
+    padding: 1.25rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 1rem 0;
+    position: relative;
+    border: 1px solid #30363d;  /* Subtle darker border */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);  /* Add subtle shadow */
+}
+
+.markdown-content pre code {
+    background-color: transparent;
+    color: #e6e6e6;
+    display: block;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 0.9em;
+    line-height: 1.5;
+    padding: 0;
+}
+
+/* Inline code styling */
+.markdown-content code:not(pre code) {
+    background-color: #161b22;  /* Darker background for inline code */
+    color: #e83e8c;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+}
+
+/* Language indicator */
+.markdown-content pre::before {
+    content: attr(data-language);
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75em;
+    color: #8e8e8e;
+    background-color: #161b22;  /* Darker background for language indicator */
+    border-bottom-left-radius: 4px;
+}
+
+/* Copy button styling */
+.code-copy-button {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    background-color: #161b22;  /* Darker background for copy button */
+    border: 1px solid #30363d;
+    border-radius: 4px;
+    color: #8e8e8e;
+    font-size: 0.75em;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.markdown-content pre:hover .code-copy-button {
+    opacity: 1;
+}
+
+.code-copy-button:hover {
+    background-color: #1f2428;  /* Slightly lighter on hover */
+    color: #ffffff;
+}
+
+/* Syntax highlighting colors */
+.markdown-content .keyword { color: #ff7b72; }  /* Updated color scheme */
+.markdown-content .string { color: #a5d6ff; }
+.markdown-content .comment { color: #8b949e; }
+.markdown-content .number { color: #79c0ff; }
+.markdown-content .function { color: #d2a8ff; }
+.markdown-content .class { color: #7ee787; }
+
+/* List styling */
+.markdown-content ul,
+.markdown-content ol {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+}
+
+/* Blockquote styling */
+.markdown-content blockquote {
+    border-left: 4px solid #6c757d;
+    padding-left: 1rem;
+    margin: 1rem 0;
+    color: #adb5bd;
+}
+
+/* Table styling */
+.markdown-content table {
+    width: 100%;
+    margin-bottom: 1rem;
+    border-collapse: collapse;
+}
+
+.markdown-content th,
+.markdown-content td {
+    padding: 0.75rem;
+    border: 1px solid #444;
+}
+
+.markdown-content th {
+    background-color: #2d2d2d;
+}
+
+/* Link styling */
+.markdown-content a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.markdown-content a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+/* Horizontal rule */
+.markdown-content hr {
+    border: 0;
+    border-top: 1px solid #444;
+    margin: 2rem 0;
+}

@@ -1,0 +1,156 @@
+.container-fluid {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    background-color: #343541;
+}
+
+.main--body {
+    position: relative;
+    height: 100vh;
+    background-color: #343541;
+    padding-bottom: 80px;
+}
+
+.answer--body {
+    padding: 20px;
+    overflow-y: auto;
+    height: calc(100vh - 80px);
+}
+
+.input--area {
+    position: fixed;
+    bottom: 0;
+    width: calc(100% - 16.66667%);
+    padding: 20px;
+    background-color: #343541;
+}
+
+.input--question {
+    background-color: #40414f;
+    border: none;
+    color: white;
+}
+
+.input--question:focus {
+    background-color: #40414f;
+    border-color: #40414f;
+    box-shadow: none;
+    color: white;
+}
+
+#submit--question {
+    background-color: #40414f;
+    border: none;
+    cursor: pointer;
+}
+
+#submit--question:hover {
+    background-color: #202123;
+}
+
+.message {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 80%;
+}
+
+.user--message {
+    background-color: #40414f;
+    color: white;
+    margin-left: auto;
+}
+
+.user--model {
+    background-color: #444654;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .input--area {
+        width: 100%;
+    }
+}
+
+.file-list {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.file-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    margin: 5px 0;
+    background-color: #40414f;
+    border-radius: 4px;
+}
+
+.file-name {
+    margin-right: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.remove-file {
+    cursor: pointer;
+    color: #ff4444;
+}
+
+.upload-box {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.upload-box.dragover {
+    background-color: #e9ecef;
+    border-color: #86b7fe;
+}
+
+.dropdown-menu {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.dropdown-item:hover {
+    background-color: #202123 !important;
+}
+
+#processFilesBtn {
+    background-color: #40414f;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+#processFilesBtn:hover:not(:disabled) {
+    background-color: #202123;
+}
+
+#processFilesBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.alert {
+    padding: 0.5rem;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+}
+
+.alert-success {
+    background-color: #28a745;
+    color: white;
+}
+
+.alert-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+
+

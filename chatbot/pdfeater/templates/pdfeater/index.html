@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Eater</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'pdfeater/css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'pdfeater/css/sidebar.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sindresorhus/github-markdown-css/github-markdown.css">-->
+    <link rel="stylesheet" href="{% static 'pdfeater/css/markdown.css' %}">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div id="sidebar" class="side--bar col-md-2 col-sm-12 collapse d-md-block bg-dark text-white p-3">
+                <div class="mb-4">
+                    <h5>Upload Files</h5>
+                    <div id="uploadBox" class="upload-box">
+                        <p>Drag & Drop files here or click to select</p>
+                        <input type="file" id="fileInput" multiple style="display: none;">
+                    </div>
+                    <div id="fileList" class="file-list mt-3 overflow-auto">
+                        <!-- File items will be added here -->
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <button id="processFilesBtn" class="btn btn-primary w-100">
+                        Process Files
+                    </button>
+                </div>
+                <div class="mb-4">
+                    <div class="dropdown">
+                        <button id="languagebutton" class="btn btn-secondary bg-{#2c2c2c} dropdown-toggle w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Language
+                        </button>
+                        <ul id="languageDropdown" class="dropdown-menu bg-dark text-light bg-dark align-items-center w-100" aria-placeholder="Select Language" default-value="English" >
+                            <li class="dropdown-item text-center  text-light w-100">English</li>
+                            <li class="dropdown-item text-center  text-light w-100">Hindi</li>
+                            <li class="dropdown-item text-center  text-light w-100">Spanish</li>
+                            <li class="dropdown-item text-center  text-light w-100">French</li>
+                            <li class="dropdown-item text-center  text-light w-100">German</li>
+                            <li class="dropdown-item text-center  text-light w-100">Italian</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div id="mainBody" class="main--body col-12 col-md-10">
+                <div class="answer--body" id="answerBody" >
+                    <!-- Chat messages will appear here -->
+                     {{answerBody|safe}}
+                </div>
+                <div class="input--area">
+                    <div class="input-group">
+                        <input type="text" id="questionInput" class="form-control input--question" placeholder="Ask a question...">
+                        <button id="submit--question" class="btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" fill="white">
+                                <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.5.5 0 0 1-.898.03l-2.777-4.445L1.715 13.1a.5.5 0 0 1-.54-.888l4.444-2.777L1.173 6.765a.5.5 0 0 1 .03-.898L15.75.037a.5.5 0 0 1 .104.11Z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'pdfeater/js/index.js' %}"></script>
+</body>
+</html>
